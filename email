@@ -1,0 +1,19 @@
+# git mailing list
+
+
+git config sendemail.smtpencryption starttls
+git config sendemail.smtpserver mail.codethink.co.uk
+git config sendemail.smtpserverport 587
+git config sendemail.smtpuser pedroalvarez
+git config sendemail.from "Pedro Alvarez <pedro.alvarez@gmail.com>"
+
+git config sendemail.to git@vger.kernel.org
+
+
+git format-patch --cover-letter origin/master
+
+echo git send-email --to palvarez89@gmail.com --smtp-debug 1 *.patch
+
+echo git send-email --cc-cmd='git contacts' *.patch
+
+
